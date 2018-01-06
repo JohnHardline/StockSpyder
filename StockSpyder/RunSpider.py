@@ -26,7 +26,14 @@ for item in json1_data:
     timeOfSales.append(item['timeofSale'])
     volumes.append(item['numstocks'])
     StockID.append(item['Stock'])
-    df = pd.DataFrame(data=item)
+
+dfSId = pd.DataFrame(StockID)
+dftSl = pd.DataFrame(timeOfSales)
+dfSvol = pd.DataFrame(volumes)
+dfSpri = pd.DataFrame(prices)
+
+print (pd.concat([dfSId,dftSl,dfSvol,dfSpri],axis=1))
+
 
 print(prices)
 print(volumes)
